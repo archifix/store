@@ -1,5 +1,5 @@
 class UserDto {
-  email
+  email;
 
   constructor(model) {
     this.email = model.email
