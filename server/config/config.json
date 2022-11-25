@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "aqnclamc",
+    "password": "xi6pRth_yzJNiHDldsnqsWLfXoFkCXiu",
+    "database": "aqnclamc",
+    "host": "ella.db.elephantsql.com",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "aqnclamc",
+    "password": "xi6pRth_yzJNiHDldsnqsWLfXoFkCXiu",
+    "database": "aqnclamc",
+    "host": "ella.db.elephantsql.com",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "aqnclamc",
+    "password": "xi6pRth_yzJNiHDldsnqsWLfXoFkCXiu",
+    "database": "aqnclamc",
+    "host": "ella.db.elephantsql.com",
+    "dialect": "postgres"
+  }
+}
