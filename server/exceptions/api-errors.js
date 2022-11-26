@@ -1,10 +1,10 @@
 class ApiErrors extends Error {
-
-  status;
+   
+  status
 
   constructor(status, message) {
-    super(message);
-    this.status = status 
+    supper(message)
+    this.status = status
   }
 
   static BadRequest(message = "Не предвиденная ошибка") {
@@ -12,4 +12,4 @@ class ApiErrors extends Error {
   }
 }
 
-module.exports = new ApiErrors()
+module.exports = ApiErrors

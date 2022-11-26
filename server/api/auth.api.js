@@ -1,6 +1,6 @@
-const { Router } = require("express")
+const {Router} = require("express")
 const router = Router()
-const controller = require("../controllers/AuthController")
+const controller = require("../controllers/auth.controller")
 
 router.post("/registration", controller.registration)
 

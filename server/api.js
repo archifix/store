@@ -1,6 +1,6 @@
-const { Router } = require("express")
+const {Router} = require("express")
 const router = Router()
-const auth = require("./api/AuthApi")
+const auth = require("./api/auth.api")
 
 router.use("/auth", auth)
 
