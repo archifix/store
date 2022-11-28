@@ -23,7 +23,7 @@ const PORT = process.env.PORT
 
 app.use(express.json({limit: "10gb"}))
 app.use(cors())
-app.use(cookieParser(process.env.ACCESS_TOKEN_SECRET))
+app.use(cookieParser())
 
 app.use("/api", api)
 
