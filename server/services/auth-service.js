@@ -29,8 +29,35 @@ class AuthService {
     }
   }
 
-  async auth() {
+  async auth({email, password}) {
 
+   const user = await users.findOne({ where: { email }})
+   if ( !user ) {
+    throw ApiErrors.BadRequest(`Не верный пароль или почта`)
+  }
+
+  const comparePasswords = await bcrypt.compare(password, user.password)
+  if (!comparePasswords) {
+    throw ApiErrors.BadRequest(`Не верный пароль или почта`)
+  }
+
+  await tokenService.saveToken(refreshToken, user.id)
+
+
+ const userDto = new UserDto( user )
+
+   const {
+     accessToken,
+     refreshToken
+   } = tokenService.generateTokens({ ...userDto })
+
+   await tokenService.saveToken(refreshToken, user.id)
+
+    return {
+    user: userDto,
+     accessToken,
+     refreshToken
+   }
   }
 
   async logout() {
