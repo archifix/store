@@ -15,7 +15,7 @@ class AuthService {
     const hashPassword = await bcrypt.hash( password, 3 )
     const user = await users.create({ email, password: hashPassword })
 
-    const userDto = UserDto( user )
+    const userDto = new UserDto( user )
 
     const {
       accessToken,
@@ -23,7 +23,7 @@ class AuthService {
     } = tokenService.generateTokens({ ...userDto })
 
     return {
-      user: UserDto,
+      user: userDto,
       accessToken,
       refreshToken
     }

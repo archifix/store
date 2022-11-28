@@ -12,7 +12,7 @@ class TokenService {
 
     return {
       accessToken,
-      refreshToken
+      refreshToken      
     }
   }
 
@@ -20,9 +20,10 @@ class TokenService {
     const refreshTokenDB = await userTokens.findOne({where: {token: refreshToken, userId}})
     if (refreshTokenDB) {
       refreshTokenDB.token = refreshToken
-      await refreshToken.save()
-    }
+      await refreshTokenDB.save()
+    } else {
     await userTokens.create({token: refreshToken, userId})
+    }
   }
 
   async findToken(refreshToken) {
